@@ -1,8 +1,8 @@
 import { ThemeProvider } from 'styled-components';
 import { defalutTheme as theme } from '../styles/Theme.js';
 import GlobalStyle from '../styles/GlobalStyle.js';
-import Header from './Header.js';
-import Container from './Container.js';
+import Header from './Header.jsx';
+import Container from './Container.jsx';
 
 const App = () => {
     return (

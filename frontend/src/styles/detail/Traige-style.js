@@ -20,12 +20,9 @@ const TraigeLoadingSection = styled.div`
     ${() => {
         return css`
             width: 70vw;
-            height: 36vw;
+            height: 30vw;
 
-            margin: 0vw auto;
-
-            position: relative;
-            top: 7.5vw;
+            margin: 2vw auto;
         `;
     }}
 `;
@@ -48,13 +45,9 @@ const TraigeSidoSelect = styled.ul`
             width: 37.5vw;
             height: 5.5vw;
 
-            position: relative;
-            top: 5.5vw;
-
-            margin: 0vw auto;
+            margin: 5vw auto 0vw auto;
 
             display: flex;
-            flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-evenly;
             align-items: flex-start;
@@ -67,14 +60,42 @@ const TraigeSidoSelect = styled.ul`
                 display: inline-block;
                 padding: 0.5vw 0.75vw;
                 margin: 0vw 0.5vw;
+
                 border-radius: ${fonts.size.base};
                 box-shadow: 0vw 0.15vw 0.1vw rgba(0, 101, 202, 0.5);
 
                 background-color: ${colors.white};
                 transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1);
+                cursor: pointer;
 
                 color: rgb(0, 112, 172);
                 font-size: ${fonts.size.lg};
+            }
+        `;
+    }}
+`;
+
+const TraigePageSelect = styled.div`
+    ${({ theme }) => {
+        const { colors, fonts } = theme;
+        return css`
+            width: 20vw;
+            height: 3vw;
+
+            margin: 0vw auto;
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: flex-start;
+
+            p {
+                margin: 0.5vw auto;
+                vertical-aligh: center;
+
+                color: ${colors.primary};
+                font-size: ${fonts.size.xl};
             }
         `;
     }}
@@ -84,9 +105,6 @@ const TraigeRoom = styled.div`
     ${({ theme }) => {
         const { colors, fonts } = theme;
         return css`
-            width: 100%;
-            height: 100%;
-
             background-color: ${colors.white};
             border-radius: 1vw;
             border: 1px solid rgba(0, 157, 255, 0.2);
@@ -104,7 +122,7 @@ const TraigeRoom = styled.div`
             }
 
             p {
-                margin: 2.5% 15%;
+                margin: 2.5% 10%;
                 font-size: ${fonts.size.base};
             }
         `;
@@ -112,27 +130,37 @@ const TraigeRoom = styled.div`
 `;
 
 const TraigeRoomOption = styled.div`
-    ${() => {
+    ${({ theme }) => {
+        const { fonts } = theme;
         return css`
-            width: 60%;
+            width: 80%;
             height: 40%;
 
             margin: 0vw auto;
 
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
             align-items: center;
 
             text-align: center;
+
+            div {
+                width: 50%;
+            }
+
+            p {
+                font-size: ${fonts.size.sm};
+            }
         `;
     }}
 `;
 
-const TraigeRoomOptionIcon = styled(FontAwesomeIcon)`
+const OptionIcon = styled(FontAwesomeIcon)`
     ${({ theme }) => {
         const { colors, fonts } = theme;
         return css`
-            padding: 0.5vw 0.45vw;
+            padding: 0.35vw 0.25vw;
             margin: 0vw auto;
 
             background: linear-gradient(rgb(0, 117, 190), rgb(0, 148, 202));
@@ -144,14 +172,32 @@ const TraigeRoomOptionIcon = styled(FontAwesomeIcon)`
     }}
 `;
 
+const PageIcon = styled(FontAwesomeIcon)`
+    ${({ theme }) => {
+        const { colors, fonts } = theme;
+        return css`
+            padding: 0.35vw 0.75vw;
+            margin: 0vw auto;
+
+            background: linear-gradient(rgb(0, 117, 190), rgb(0, 148, 202));
+            border-radius: 0.25vw;
+
+            color: ${colors.white};
+            font-size: ${fonts.size.xl};
+        `;
+    }}
+`;
+
 const TraigeStyledComponent = {
     TraigeLayout,
     TraigeLoadingSection,
     TraigeSection,
     TraigeSidoSelect,
+    TraigePageSelect,
     TraigeRoom,
     TraigeRoomOption,
-    TraigeRoomOptionIcon,
+    OptionIcon,
+    PageIcon,
 };
 
 export default TraigeStyledComponent;

@@ -1,5 +1,5 @@
 import HeaderStyledComponents from '../styles/detail/Header-style';
-import Navbar from '../components/Navbar.js';
+import Navbar from './Navbar.jsx';
 
 const { HeaderLayout, Background, HeaderTitle } = HeaderStyledComponents;
 
