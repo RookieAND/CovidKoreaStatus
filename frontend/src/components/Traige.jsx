@@ -30,28 +30,40 @@ const Triage = () => {
                 url: 'http://localhost:5000/api/traige',
                 data: {
                     sido: traigeSido,
-                    page: traigePage,
                 },
             });
             setTraigeList(res.data);
+            setTraigePage(1);
             setLoading(false);
         };
         traigeRoomList();
-    }, [traigeSido, traigePage]);
+    }, [traigeSido]);
     return (
         <TraigeLayout>
             <TitleSection>
                 <h3>Traige Room List</h3>
                 <p>선별 진료소 목록</p>
             </TitleSection>
-            <TraigeSidoList setTraigeSido={setTraigeSido} traigeSido={traigeSido} />
-            {loading ? <TraigeLoadingSection /> : <TraigeList traigeList={traigeList} setTraigePage={setTraigePage} />}
-            <TraigePageList setTraigePage={setTraigePage} traigePage={traigePage} />
+            <TraigeSidoList setTraigeSido={setTraigeSido} traigeSido={traigeSido} setLoading={setLoading} />
+            {loading ? (
+                <TraigeLoadingSection>
+                    <div className='loader'></div>
+                </TraigeLoadingSection>
+            ) : (
+                <div>
+                    <TraigeList traigeList={traigeList} traigePage={traigePage} />
+                    <TraigePageList
+                        setTraigePage={setTraigePage}
+                        traigePage={traigePage}
+                        traigeAmount={traigeList.length}
+                    />
+                </div>
+            )}
         </TraigeLayout>
     );
 };
 
-const TraigeSidoList = ({ traigeSido, setTraigeSido }) => {
+const TraigeSidoList = ({ traigeSido, setTraigeSido, setLoading }) => {
     const sido = [
         '서울',
         '경기',
@@ -73,6 +85,7 @@ const TraigeSidoList = ({ traigeSido, setTraigeSido }) => {
     const clickSidoOption = (event) => {
         if (event.target.innerText != traigeSido) {
             setTraigeSido(event.target.innerText);
+            setLoading(true);
         }
     };
     return (
@@ -86,27 +99,30 @@ const TraigeSidoList = ({ traigeSido, setTraigeSido }) => {
     );
 };
 
-const TraigePageList = ({ setTraigePage, traigePage }) => {
+const TraigePageList = ({ setTraigePage, traigePage, traigeAmount }) => {
+    const MaxPage = parseInt(traigeAmount / 9) + (traigeAmount % 9 > 0 ? 1 : 0);
     const clickPage = (event) => {
         const resultPage = traigePage + Number(event.target.id);
-        console.log(resultPage);
-        if (resultPage > 0 && resultPage < 10) {
+        if (resultPage > 0 && resultPage <= MaxPage) {
             setTraigePage(resultPage);
         }
     };
     return (
         <TraigePageSelect>
-            <PageIcon id={-1} icon={faCaretLeft} onClick={clickPage} />
-            <p>{traigePage} / 9</p>
-            <PageIcon id={1} icon={faCaretRight} onClick={clickPage} />
+            <PageIcon id={-1} icon={faCaretLeft} onClick={clickPage} className={traigePage > 1 ? 'on' : 'off'} />
+            <p>
+                {traigePage} / {MaxPage}
+            </p>
+            <PageIcon id={1} icon={faCaretRight} onClick={clickPage} className={traigePage >= MaxPage ? 'off' : 'on'} />
         </TraigePageSelect>
     );
 };
 
-const TraigeList = ({ traigeList, setTraigePage }) => {
+const TraigeList = ({ traigeList, traigePage }) => {
+    const currentTraigePage = traigeList.slice((traigePage - 1) * 9, traigePage * 9);
     return (
         <TraigeSection>
-            {traigeList.map((elm, idx) => (
+            {currentTraigePage.map((elm, idx) => (
                 <TraigeRoom key={idx}>
                     <h5>{elm.hospitalNm._text}</h5>
                     <p>{elm.hospitalAddr._text}</p>

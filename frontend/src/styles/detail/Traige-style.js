@@ -23,13 +23,41 @@ const TraigeLoadingSection = styled.div`
             height: 30vw;
 
             margin: 2vw auto;
+
+            display: flex;
+            align-items: center;
+
+            .loader {
+                margin: auto;
+
+                border: 16px solid #f3f3f3;
+                border-top: 16px solid #3498db;
+                border-radius: 50%;
+                width: 120px;
+                height: 120px;
+                animation: spin 2s linear infinite;
+            }
+
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
         `;
     }}
 `;
 
-const TraigeSection = styled(TraigeLoadingSection)`
+const TraigeSection = styled.div`
     ${() => {
         return css`
+            width: 70vw;
+            height: 30vw;
+
+            margin: 2vw auto;
+
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(3, 1fr);
@@ -184,6 +212,14 @@ const PageIcon = styled(FontAwesomeIcon)`
 
             color: ${colors.white};
             font-size: ${fonts.size.xl};
+
+            &.off {
+                background: linear-gradient(rgb(125, 125, 125), rgb(105, 105, 105));
+            }
+
+            &.on {
+                background: linear-gradient(rgb(0, 117, 190), rgb(0, 148, 202));
+            }
         `;
     }}
 `;

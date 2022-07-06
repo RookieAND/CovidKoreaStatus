@@ -49,7 +49,7 @@ const CovidGraph = () => {
         labels: date,
         datasets: [
             {
-                type: 'line',
+                type: 'bar',
                 label: '확진자',
                 backgroundColor: 'rgba(0, 102, 176, 0.5)',
                 data: confirmedCases,
@@ -69,6 +69,22 @@ const CovidGraph = () => {
         plugins: {
             legend: {
                 display: true,
+            },
+        },
+        interaction: {
+            mode: 'index',
+            intersect: false,
+        },
+        scales: {
+            x: {
+                grid: {
+                    display: false,
+                },
+            },
+            y: {
+                grid: {
+                    color: '#E3E3E3',
+                },
             },
         },
     };
