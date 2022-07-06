@@ -91,7 +91,7 @@ const TraigeSidoList = ({ traigeSido, setTraigeSido, setLoading }) => {
     return (
         <TraigeSidoSelect>
             {sido.map((elm) => (
-                <li key={elm} onClick={clickSidoOption}>
+                <li key={elm} onClick={clickSidoOption} className={traigeSido == elm ? 'selected' : null}>
                     {elm}
                 </li>
             ))}

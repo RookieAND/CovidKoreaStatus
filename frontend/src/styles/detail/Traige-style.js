@@ -96,8 +96,14 @@ const TraigeSidoSelect = styled.ul`
                 transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1);
                 cursor: pointer;
 
-                color: rgb(0, 112, 172);
+                color: ${colors.secondary};
                 font-size: ${fonts.size.lg};
+
+                &.selected {
+                    background-color: ${colors.secondary};
+                    color: ${colors.white};
+                    box-shadow: 0vw 0.15vw 0.1vw rgba(13, 71, 161, 0.5);
+                }
             }
         `;
     }}
@@ -219,6 +225,7 @@ const PageIcon = styled(FontAwesomeIcon)`
 
             &.on {
                 background: linear-gradient(rgb(0, 117, 190), rgb(0, 148, 202));
+                cursor: pointer;
             }
         `;
     }}

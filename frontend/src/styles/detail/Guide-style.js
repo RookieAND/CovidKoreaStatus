@@ -5,7 +5,7 @@ const GuideLayout = styled.div`
     ${() => {
         return css`
             width: 100vw;
-            height: 27.5vw;
+            height: 25vw;
 
             background-image: linear-gradient(rgba(184, 228, 255, 0.3), rgba(255, 255, 255, 0.15));
             background-size: cover;
@@ -19,10 +19,10 @@ const GuideLine = styled.div`
             position: relative;
             top: 12.5%;
 
-            width: 60vw;
+            width: 50vw;
             height: 16vw;
 
-            margin: auto 20vw;
+            margin: auto;
 
             display: flex;
             justify-content: space-between;
