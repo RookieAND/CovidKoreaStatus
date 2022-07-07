@@ -56,13 +56,8 @@ const TraigeLoadingSection = styled.div`
             }
 
             ${device.tablet} {
-                .loader {
-                    width: ${fonts.size.xl};
-                    height: ${fonts.size.xl};
-                }
-
-                canvas {
-                    box-shadow: 0vw 0.45vw 0.3vw rgba(0, 101, 202, 0.5);
+                p {
+                    font-size: ${fonts.size.sm};
                 }
             }
         `;

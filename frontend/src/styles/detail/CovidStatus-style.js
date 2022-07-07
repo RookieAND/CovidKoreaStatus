@@ -49,7 +49,8 @@ const CovidGraphSection = styled.div`
                 }
 
                 canvas {
-                    box-shadow: 0vw 0.45vw 0.3vw rgba(0, 101, 202, 0.5);
+                    border-radius: ${fonts.size.sm};
+                    box-shadow: 0vw 0.25vw 0.2vw rgba(0, 101, 202, 0.5);
                 }
             }
         `;
