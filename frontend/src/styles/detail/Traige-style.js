@@ -41,9 +41,9 @@ const TraigeLoadingSection = styled.div`
                 border: 16px solid #f3f3f3;
                 border-top: 16px solid #3498db;
                 border-radius: 50%;
-                width: ${fonts.size.title};
-                height: ${fonts.size.title};
-                animation: spin 2s linear infinite;
+                width: 120px;
+                height: 120px;
+                animation: spin 1.5s cubic-bezier(0.45, 0.82, 0.265, 0.9) infinite;
             }
 
             @keyframes spin {
@@ -56,6 +56,14 @@ const TraigeLoadingSection = styled.div`
             }
 
             ${device.tablet} {
+                margin: 1vw auto;
+
+                .loader {
+                    border: 8px solid #f3f3f3;
+                    border-top: 8px solid #3498db;
+                    width: 60px;
+                    height: 60px;
+                }
                 p {
                     font-size: ${fonts.size.sm};
                 }
@@ -188,7 +196,7 @@ const TraigeRoom = styled.div`
             transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1);
 
             h5 {
-                margin: 7.5% auto 0% auto;
+                margin: 5% auto 0% auto;
                 font-size: ${fonts.size.xl};
                 font-family: ${fonts.weight.bold};
             }
@@ -218,7 +226,7 @@ const TraigeRoomOption = styled.div`
         const { fonts, device } = theme;
         return css`
             width: 100%;
-            height: 40%;
+            height: 30%;
 
             margin: 0vw auto;
 

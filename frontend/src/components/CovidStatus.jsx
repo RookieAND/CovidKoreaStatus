@@ -51,6 +51,7 @@ const CovidGraph = () => {
             {
                 type: 'line',
                 label: '확진자',
+                borderColor: 'rgb(0, 102, 176)',
                 backgroundColor: 'rgba(0, 102, 176, 0.5)',
                 data: confirmedCases,
             },
