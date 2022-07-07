@@ -48,6 +48,7 @@ const Triage = () => {
             {loading ? (
                 <TraigeLoadingSection>
                     <div className='loader'></div>
+                    <p>자료를 불러오고 있습니다. 잠시만 기다려주세요...</p>
                 </TraigeLoadingSection>
             ) : (
                 <div>

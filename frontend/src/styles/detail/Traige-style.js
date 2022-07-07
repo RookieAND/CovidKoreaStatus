@@ -17,7 +17,8 @@ const TraigeLayout = styled.div`
 `;
 
 const TraigeLoadingSection = styled.div`
-    ${() => {
+    ${({ theme }) => {
+        const { colors, fonts, device } = theme;
         return css`
             width: 70vw;
             height: 30vw;
@@ -25,16 +26,23 @@ const TraigeLoadingSection = styled.div`
             margin: 2vw auto;
 
             display: flex;
+            flex-direction: column;
             align-items: center;
 
+            p {
+                margin: 0vw auto;
+                color: ${colors.primary};
+                font-size: ${fonts.size.xl};
+            }
+
             .loader {
-                margin: auto;
+                margin: 7.5vw auto;
 
                 border: 16px solid #f3f3f3;
                 border-top: 16px solid #3498db;
                 border-radius: 50%;
-                width: 120px;
-                height: 120px;
+                width: ${fonts.size.title};
+                height: ${fonts.size.title};
                 animation: spin 2s linear infinite;
             }
 
@@ -46,15 +54,25 @@ const TraigeLoadingSection = styled.div`
                     transform: rotate(360deg);
                 }
             }
+
+            ${device.tablet} {
+                .loader {
+                    width: ${fonts.size.xl};
+                    height: ${fonts.size.xl};
+                }
+
+                canvas {
+                    box-shadow: 0vw 0.45vw 0.3vw rgba(0, 101, 202, 0.5);
+                }
+            }
         `;
     }}
 `;
 
 const TraigeSection = styled.div`
-    ${() => {
+    ${({ theme }) => {
         return css`
-            width: 70vw;
-            height: 30vw;
+            width: 80vw;
 
             margin: 2vw auto;
 
@@ -62,13 +80,17 @@ const TraigeSection = styled.div`
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(3, 1fr);
             gap: 0.4vw 0.4vw;
+
+            ${theme.device.tablet} {
+                width: 90vw;
+            }
         `;
     }}
 `;
 
 const TraigeSidoSelect = styled.ul`
     ${({ theme }) => {
-        const { colors, fonts } = theme;
+        const { colors, fonts, device } = theme;
         return css`
             width: 37.5vw;
             height: 5.5vw;
@@ -105,13 +127,27 @@ const TraigeSidoSelect = styled.ul`
                     box-shadow: 0vw 0.15vw 0.1vw rgba(13, 71, 161, 0.5);
                 }
             }
+
+            ${device.tablet} {
+                width: 45vw;
+                height: 8vw;
+
+                margin: 5vw auto 0vw auto;
+
+                li {
+                    padding: 0.35vw 0.6vw;
+                    margin: 0vw 0.4vw;
+
+                    font-size: ${fonts.size.sm};
+                }
+            }
         `;
     }}
 `;
 
 const TraigePageSelect = styled.div`
     ${({ theme }) => {
-        const { colors, fonts } = theme;
+        const { colors, fonts, device } = theme;
         return css`
             width: 20vw;
             height: 3vw;
@@ -131,13 +167,20 @@ const TraigePageSelect = styled.div`
                 color: ${colors.primary};
                 font-size: ${fonts.size.xl};
             }
+
+            ${device.tablet} {
+                p {
+                    margin: 2.5% 5%;
+                    font-size: ${fonts.size.base};
+                }
+            }
         `;
     }}
 `;
 
 const TraigeRoom = styled.div`
     ${({ theme }) => {
-        const { colors, fonts } = theme;
+        const { colors, fonts, device } = theme;
         return css`
             background-color: ${colors.white};
             border-radius: 1vw;
@@ -159,15 +202,27 @@ const TraigeRoom = styled.div`
                 margin: 2.5% 10%;
                 font-size: ${fonts.size.base};
             }
+
+            ${device.tablet} {
+                h5 {
+                    font-size: ${fonts.size.base};
+                    font-family: ${fonts.weight.bold};
+                }
+
+                p {
+                    margin: 2.5% 5%;
+                    font-size: ${fonts.size.xsm};
+                }
+            }
         `;
     }}
 `;
 
 const TraigeRoomOption = styled.div`
     ${({ theme }) => {
-        const { fonts } = theme;
+        const { fonts, device } = theme;
         return css`
-            width: 80%;
+            width: 100%;
             height: 40%;
 
             margin: 0vw auto;
@@ -186,13 +241,21 @@ const TraigeRoomOption = styled.div`
             p {
                 font-size: ${fonts.size.sm};
             }
+
+            ${device.tablet} {
+                margin: 0vw auto 0.5vw auto;
+
+                p {
+                    font-size: ${fonts.size.xsm};
+                }
+            }
         `;
     }}
 `;
 
 const OptionIcon = styled(FontAwesomeIcon)`
     ${({ theme }) => {
-        const { colors, fonts } = theme;
+        const { colors, fonts, device } = theme;
         return css`
             padding: 0.35vw 0.25vw;
             margin: 0vw auto;
@@ -202,13 +265,18 @@ const OptionIcon = styled(FontAwesomeIcon)`
 
             color: ${colors.white};
             font-size: ${fonts.size.base};
+
+            ${device.tablet} {
+                padding: 0.35vw 0.25vw;
+                font-size: ${fonts.size.xsm};
+            }
         `;
     }}
 `;
 
 const PageIcon = styled(FontAwesomeIcon)`
     ${({ theme }) => {
-        const { colors, fonts } = theme;
+        const { colors, fonts, device } = theme;
         return css`
             padding: 0.35vw 0.75vw;
             margin: 0vw auto;
@@ -226,6 +294,10 @@ const PageIcon = styled(FontAwesomeIcon)`
             &.on {
                 background: linear-gradient(rgb(0, 117, 190), rgb(0, 148, 202));
                 cursor: pointer;
+            }
+
+            ${device.tablet} {
+                font-size: ${fonts.size.base};
             }
         `;
     }}

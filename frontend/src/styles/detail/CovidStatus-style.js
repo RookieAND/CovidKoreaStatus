@@ -14,7 +14,7 @@ const CovidStatusLayout = styled.div`
 
 const CovidGraphSection = styled.div`
     ${({ theme }) => {
-        const { colors, fonts } = theme;
+        const { colors, fonts, device } = theme;
         return css`
             width: 80vw;
             height: 30vw;
@@ -41,6 +41,16 @@ const CovidGraphSection = styled.div`
                 background-color: ${colors.white};
                 border-radius: ${fonts.size.xl};
                 box-shadow: 0vw 0.15vw 0.1vw rgba(0, 101, 202, 0.5);
+            }
+
+            ${device.tablet} {
+                h1 {
+                    font-size: ${fonts.size.base};
+                }
+
+                canvas {
+                    box-shadow: 0vw 0.45vw 0.3vw rgba(0, 101, 202, 0.5);
+                }
             }
         `;
     }}

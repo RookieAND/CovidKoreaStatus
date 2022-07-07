@@ -35,13 +35,15 @@ const GuideLine = styled.div`
 
 const GuideElement = styled.div`
     ${({ theme }) => {
-        const { fonts } = theme;
+        const { colors, fonts, device } = theme;
         return css`
             width: 15vw;
             height: 12vw;
 
             margin: auto 0vw;
             text-align: center;
+
+            color: ${colors.primary};
 
             h5 {
                 margin: 1vw 0vw 0.5vw 0vw;
@@ -53,13 +55,24 @@ const GuideElement = styled.div`
                 margin: 0;
                 font-size: ${fonts.size.sm};
             }
+
+            ${device.tablet} {
+                width: 18vw;
+                h5 {
+                    font-size: ${fonts.size.base};
+                }
+
+                p {
+                    font-size: ${fonts.size.xsm};
+                }
+            }
         `;
     }}
 `;
 
 const GuideElementIcon = styled(FontAwesomeIcon)`
     ${({ theme }) => {
-        const { colors, fonts } = theme;
+        const { colors, fonts, device } = theme;
         return css`
             padding: 2vw 1.75vw;
             margin: 0.5vw;
@@ -69,6 +82,10 @@ const GuideElementIcon = styled(FontAwesomeIcon)`
 
             color: ${colors.white};
             font-size: ${fonts.size.title};
+
+            ${device.tablet} {
+                font-size: ${fonts.size.lg};
+            }
         `;
     }}
 `;

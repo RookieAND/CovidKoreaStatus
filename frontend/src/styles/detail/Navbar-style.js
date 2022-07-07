@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 const NavbarLayout = styled.div`
     ${({ theme }) => {
-        const { colors, fonts } = theme;
+        const { colors, fonts, device } = theme;
         return css`
             width: 60vw;
             height: 2.75vw;
@@ -20,13 +20,17 @@ const NavbarLayout = styled.div`
             vertical-align: middle;
 
             font-family: ${fonts.family.base};
+
+            ${device.tablet} {
+                height: 3vw;
+            }
         `;
     }}
 `;
 
 const NavbarOption = styled.div`
     ${({ theme }) => {
-        const { colors, fonts } = theme;
+        const { colors, fonts, device } = theme;
         return css`
             width: 5vw;
             margin: auto 2.5vw;
@@ -34,6 +38,11 @@ const NavbarOption = styled.div`
             color: rgb(0, 112, 172);
             font-size: ${fonts.size.base};
             transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1);
+
+            ${device.tablet} {
+                width: 10vw;
+                font-size: ${fonts.size.sm};
+            }
 
             &:hover {
                 padding: 0.1vw 0.15vw;

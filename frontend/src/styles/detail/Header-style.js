@@ -23,7 +23,7 @@ const Background = styled.div`
 
 const HeaderTitle = styled.div`
     ${({ theme }) => {
-        const { colors, fonts } = theme;
+        const { colors, fonts, device } = theme;
         return css`
             position: relative;
             top: 35%;
@@ -43,6 +43,18 @@ const HeaderTitle = styled.div`
             p {
                 margin: 0.4vw;
                 font-size: ${fonts.size.xl};
+            }
+
+            ${device.tablet} {
+                top: 30%;
+
+                h1 {
+                    font-size: ${fonts.size.xxl};
+                }
+
+                p {
+                    font-size: ${fonts.size.base};
+                }
             }
         `;
     }}

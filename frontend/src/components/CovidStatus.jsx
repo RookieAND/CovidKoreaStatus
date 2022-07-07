@@ -43,13 +43,13 @@ const CovidGraph = () => {
         coronaStatus();
     }, []);
 
-    const date = Array.from([...Array(7).keys()], (num) => corona[`mmdd${num + 1}`]);
-    const confirmedCases = Array.from([...Array(7).keys()], (num) => corona[`cnt${num + 1}`]);
+    const date = [...Array(7).keys()].map((num) => corona[`mmdd${num + 1}`]);
+    const confirmedCases = [...Array(7).keys()].map((num) => corona[`cnt${num + 1}`]);
     const data = {
         labels: date,
         datasets: [
             {
-                type: 'bar',
+                type: 'line',
                 label: '확진자',
                 backgroundColor: 'rgba(0, 102, 176, 0.5)',
                 data: confirmedCases,
@@ -61,8 +61,8 @@ const CovidGraph = () => {
         layout: {
             padding: {
                 top: 5,
-                left: 15,
-                right: 15,
+                left: 40,
+                right: 40,
                 bottom: 15,
             },
         },
@@ -92,7 +92,7 @@ const CovidGraph = () => {
     return (
         <CovidGraphSection>
             <h1>금일 코로나 확진자 : {loading ? '- - - - 명' : `${parseInt(corona['cnt7']).toLocaleString()} 명`}</h1>
-            {loading ? null : <ReactChart type='line' data={data} options={option} />}
+            {loading || <ReactChart type='line' data={data} options={option} />}
         </CovidGraphSection>
     );
 };

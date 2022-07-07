@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const TitleSection = styled.div`
     ${({ theme }) => {
-        const { colors, fonts } = theme;
+        const { colors, fonts, device } = theme;
         return css`
             position: relative;
             top: 3vw;
@@ -31,6 +31,20 @@ export const TitleSection = styled.div`
 
                 text-align: center;
                 font-size: ${fonts.size.base};
+            }
+
+            ${device.tablet} {
+                h3 {
+                    font-size: ${fonts.size.lg};
+                }
+
+                h3::after {
+                    width: ${fonts.size.base};
+                }
+
+                p {
+                    font-size: ${fonts.size.xsm};
+                }
             }
         `;
     }}
