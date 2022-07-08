@@ -49,7 +49,7 @@ const HeaderTitle = styled.div`
                 top: 30%;
 
                 h1 {
-                    font-size: ${fonts.size.xl};
+                    font-size: ${fonts.size.xxl};
                 }
 
                 p {

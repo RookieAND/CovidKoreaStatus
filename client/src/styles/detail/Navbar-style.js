@@ -41,7 +41,7 @@ const NavbarOption = styled.div`
 
             ${device.mobile} {
                 width: 10vw;
-                font-size: ${fonts.size.xsm};
+                font-size: ${fonts.size.xxsm};
             }
 
             &:hover {
