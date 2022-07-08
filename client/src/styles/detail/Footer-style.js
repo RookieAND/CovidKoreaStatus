@@ -13,7 +13,7 @@ const FooterLayout = styled.div`
             text-align: center;
             color: ${colors.primary};
 
-            ${device.tablet} {
+            ${device.mobile} {
                 font-size: ${fonts.size.xsm};
             }
         `;

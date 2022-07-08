@@ -33,9 +33,9 @@ export const TitleSection = styled.div`
                 font-size: ${fonts.size.base};
             }
 
-            ${device.tablet} {
+            ${device.mobile} {
                 h3 {
-                    font-size: ${fonts.size.lg};
+                    font-size: ${fonts.size.base};
                 }
 
                 h3::after {
@@ -43,7 +43,7 @@ export const TitleSection = styled.div`
                 }
 
                 p {
-                    font-size: ${fonts.size.xsm};
+                    font-size: ${fonts.size.xxsm};
                 }
             }
         `;

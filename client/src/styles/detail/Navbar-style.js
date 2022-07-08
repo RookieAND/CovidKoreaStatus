@@ -21,7 +21,7 @@ const NavbarLayout = styled.div`
 
             font-family: ${fonts.family.base};
 
-            ${device.tablet} {
+            ${device.mobile} {
                 height: 3vw;
             }
         `;
@@ -39,9 +39,9 @@ const NavbarOption = styled.div`
             font-size: ${fonts.size.base};
             transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1);
 
-            ${device.tablet} {
+            ${device.mobile} {
                 width: 10vw;
-                font-size: ${fonts.size.sm};
+                font-size: ${fonts.size.xsm};
             }
 
             &:hover {

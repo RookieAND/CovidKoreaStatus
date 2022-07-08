@@ -5,7 +5,7 @@ const margins = {
     xl: '3rem',
 };
 
-const paddings = { 
+const paddings = {
     sm: '.5rem',
     base: '1rem',
     lg: '2rem',
@@ -18,6 +18,7 @@ const fonts = {
         title: `'Noto Sans KR', serif`,
     },
     size: {
+        xxsm: '.5rem',
         xsm: '1rem',
         sm: '1.4rem',
         base: '1.6rem',

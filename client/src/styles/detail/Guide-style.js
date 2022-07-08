@@ -2,19 +2,25 @@ import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const GuideLayout = styled.div`
-    ${() => {
+    ${({ theme }) => {
+        const { device } = theme;
         return css`
             width: 100vw;
             height: 25vw;
 
             background-image: linear-gradient(rgba(184, 228, 255, 0.3), rgba(255, 255, 255, 0.15));
             background-size: cover;
+
+            ${device.mobile} {
+                height: 40vw;
+            }
         `;
     }}
 `;
 
 const GuideLine = styled.div`
-    ${() => {
+    ${({ theme }) => {
+        const { device } = theme;
         return css`
             position: relative;
             top: 12.5%;
@@ -29,6 +35,11 @@ const GuideLine = styled.div`
             align-items: center;
 
             text-align: center;
+
+            ${device.mobile} {
+                width: 70vw;
+                height: 16vw;
+            }
         `;
     }}
 `;
@@ -56,10 +67,10 @@ const GuideElement = styled.div`
                 font-size: ${fonts.size.sm};
             }
 
-            ${device.tablet} {
+            ${device.mobile} {
                 width: 18vw;
                 h5 {
-                    font-size: ${fonts.size.base};
+                    font-size: ${fonts.size.sm};
                 }
 
                 p {
@@ -83,7 +94,7 @@ const GuideElementIcon = styled(FontAwesomeIcon)`
             color: ${colors.white};
             font-size: ${fonts.size.title};
 
-            ${device.tablet} {
+            ${device.mobile} {
                 font-size: ${fonts.size.lg};
             }
         `;

@@ -8,7 +8,6 @@ const TraigeLayout = styled.div`
             top: 0;
 
             width: 100vw;
-            height: 60vw;
 
             background-image: linear-gradient(rgba(184, 228, 255, 0.3), rgba(255, 255, 255, 0.15));
             background-size: cover;
@@ -28,8 +27,8 @@ const TraigeSection = styled.div`
             grid-template-rows: repeat(3, 1fr);
             gap: 0.4vw 0.4vw;
 
-            ${theme.device.tablet} {
-                width: 90vw;
+            ${theme.device.mobile} {
+                width: 92.5vw;
             }
         `;
     }}
@@ -75,11 +74,11 @@ const TraigeSidoSelect = styled.ul`
                 }
             }
 
-            ${device.tablet} {
-                width: 45vw;
-                height: 8vw;
+            ${device.mobile} {
+                width: 70vw;
+                height: 10vw;
 
-                margin: 5vw auto 0vw auto;
+                margin: 6.5vw auto 0vw auto;
 
                 li {
                     padding: 0.35vw 0.6vw;
@@ -97,7 +96,6 @@ const TraigePageSelect = styled.div`
         const { colors, fonts, device } = theme;
         return css`
             width: 20vw;
-            height: 3vw;
 
             margin: 0vw auto;
 
@@ -115,10 +113,11 @@ const TraigePageSelect = styled.div`
                 font-size: ${fonts.size.xl};
             }
 
-            ${device.tablet} {
+            ${device.mobile} {
+                margin: 2vw auto;
                 p {
                     margin: 2.5% 5%;
-                    font-size: ${fonts.size.base};
+                    font-size: ${fonts.size.sm};
                 }
             }
         `;
@@ -150,15 +149,14 @@ const TraigeRoom = styled.div`
                 font-size: ${fonts.size.base};
             }
 
-            ${device.tablet} {
+            ${device.mobile} {
                 h5 {
-                    font-size: ${fonts.size.base};
-                    font-family: ${fonts.weight.bold};
+                    font-size: ${fonts.size.xsm};
                 }
 
                 p {
                     margin: 2.5% 5%;
-                    font-size: ${fonts.size.xsm};
+                    font-size: ${fonts.size.xxsm};
                 }
             }
         `;
@@ -170,9 +168,8 @@ const TraigeRoomOption = styled.div`
         const { fonts, device } = theme;
         return css`
             width: 100%;
-            height: 30%;
 
-            margin: 0vw auto;
+            margin: auto;
 
             display: flex;
             flex-direction: row;
@@ -189,11 +186,10 @@ const TraigeRoomOption = styled.div`
                 font-size: ${fonts.size.sm};
             }
 
-            ${device.tablet} {
+            ${device.mobile} {
                 margin: 0vw auto 0.5vw auto;
-
                 p {
-                    font-size: ${fonts.size.xsm};
+                    font-size: ${fonts.size.xxsm};
                 }
             }
         `;
@@ -243,8 +239,8 @@ const PageIcon = styled(FontAwesomeIcon)`
                 cursor: pointer;
             }
 
-            ${device.tablet} {
-                font-size: ${fonts.size.base};
+            ${device.mobile} {
+                font-size: ${fonts.size.sm};
             }
         `;
     }}

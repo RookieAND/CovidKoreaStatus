@@ -45,11 +45,11 @@ const HeaderTitle = styled.div`
                 font-size: ${fonts.size.xl};
             }
 
-            ${device.tablet} {
+            ${device.mobile} {
                 top: 30%;
 
                 h1 {
-                    font-size: ${fonts.size.xxl};
+                    font-size: ${fonts.size.xl};
                 }
 
                 p {

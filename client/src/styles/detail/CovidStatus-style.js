@@ -1,13 +1,18 @@
 import styled, { css } from 'styled-components';
 
 const CovidStatusLayout = styled.div`
-    ${() => {
+    ${({ theme }) => {
+        const { device } = theme;
         return css`
             width: 100vw;
             height: 50vw;
 
             background-image: linear-gradient(rgba(184, 228, 255, 0.3), rgba(255, 255, 255, 0.15));
             background-size: cover;
+
+            ${device.mobile} {
+                height: 60vw;
+            }
         `;
     }}
 `;
@@ -22,7 +27,7 @@ const CovidGraphSection = styled.div`
             position: relative;
             top: 10%;
 
-            margin: 0vw 10vw;
+            margin: 0vw auto;
 
             text-align: center;
             font-size: ${fonts.size.base};
@@ -43,13 +48,16 @@ const CovidGraphSection = styled.div`
                 box-shadow: 0vw 0.15vw 0.1vw rgba(0, 101, 202, 0.5);
             }
 
-            ${device.tablet} {
+            ${device.mobile} {
+                width: 90vw;
                 h1 {
-                    font-size: ${fonts.size.base};
+                    font-size: ${fonts.size.sm};
+                    margin: 0vw 25vw 4vw 25vw;
                 }
 
                 canvas {
-                    border-radius: ${fonts.size.sm};
+                    padding: 4vw 0vw;
+                    border-radius: 0px;
                     box-shadow: 0vw 0.25vw 0.2vw rgba(0, 101, 202, 0.5);
                 }
             }
