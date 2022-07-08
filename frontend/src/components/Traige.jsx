@@ -4,11 +4,11 @@ import axios from 'axios';
 import { faMagnifyingGlass, faPhone, faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons';
 import TraigeStyledComponent from '../styles/detail/Traige-style';
 import { TitleSection } from '../styles/general/Title.js';
+import { Spinner } from '../styles/general/Spinner.js';
 
 const {
     TraigeLayout,
     TraigeSection,
-    TraigeLoadingSection,
     TraigeSidoSelect,
     TraigePageSelect,
     TraigeRoom,
@@ -46,10 +46,10 @@ const Triage = () => {
             </TitleSection>
             <TraigeSidoList setTraigeSido={setTraigeSido} traigeSido={traigeSido} setLoading={setLoading} />
             {loading ? (
-                <TraigeLoadingSection>
+                <Spinner>
                     <div className='loader'></div>
                     <p>자료를 불러오고 있습니다. 잠시만 기다려주세요...</p>
-                </TraigeLoadingSection>
+                </Spinner>
             ) : (
                 <div>
                     <TraigeList traigeList={traigeList} traigePage={traigePage} />

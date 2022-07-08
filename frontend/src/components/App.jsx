@@ -3,6 +3,7 @@ import { defalutTheme as theme } from '../styles/Theme.js';
 import GlobalStyle from '../styles/GlobalStyle.js';
 import Header from './Header.jsx';
 import Container from './Container.jsx';
+import Footer from './Footer.jsx';
 
 const App = () => {
     return (
@@ -11,6 +12,7 @@ const App = () => {
             <GlobalStyle />
             <Header />
             <Container />
+            <Footer />
         </ThemeProvider>
     );
 };

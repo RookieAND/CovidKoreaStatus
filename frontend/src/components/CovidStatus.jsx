@@ -2,6 +2,7 @@ import axios from 'axios';
 import CovidStatusStyledComponents from '../styles/detail/CovidStatus-style';
 import { useState, useEffect } from 'react';
 import { TitleSection } from '../styles/general/Title.js';
+import { Spinner } from '../styles/general/Spinner.js';
 import { Chart as ReactChart } from 'react-chartjs-2';
 import {
     Chart,
@@ -93,7 +94,16 @@ const CovidGraph = () => {
     return (
         <CovidGraphSection>
             <h1>금일 코로나 확진자 : {loading ? '- - - - 명' : `${parseInt(corona['cnt7']).toLocaleString()} 명`}</h1>
-            {loading || <ReactChart type='line' data={data} options={option} />}
+            {loading ? (
+                <div>
+                    <Spinner>
+                        <div className='loader'></div>
+                        <p>자료를 불러오고 있습니다. 잠시만 기다려주세요..</p>
+                    </Spinner>
+                </div>
+            ) : (
+                <ReactChart type='line' data={data} options={option} />
+            )}
         </CovidGraphSection>
     );
 };
