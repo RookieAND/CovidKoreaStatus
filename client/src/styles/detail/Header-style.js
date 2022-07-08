@@ -49,11 +49,11 @@ const HeaderTitle = styled.div`
                 top: 30%;
 
                 h1 {
-                    font-size: ${fonts.size.xxl};
+                    font-size: ${fonts.size.lg};
                 }
 
                 p {
-                    font-size: ${fonts.size.base};
+                    font-size: ${fonts.size.sm};
                 }
             }
         `;

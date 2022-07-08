@@ -97,7 +97,7 @@ const TraigePageSelect = styled.div`
         return css`
             width: 20vw;
 
-            margin: 0vw auto;
+            margin: 0vw auto 4vw auto;
 
             display: flex;
             flex-direction: row;
