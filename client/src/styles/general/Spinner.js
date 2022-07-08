@@ -46,6 +46,10 @@ export const Spinner = styled.div`
                     width: 60px;
                     height: 60px;
                 }
+
+                p {
+                    font-size: ${fonts.size.sm};
+                }
             }
         `;
     }}
