@@ -39,7 +39,7 @@ const CovidGraph = () => {
         const coronaStatus = async () => {
             let res = await axios({
                 method: 'GET',
-                url: `${process.env.baseURL || 'http://localhost:5000'}/api/status`,
+                url: 'https://covidkoreastatus.herokuapp.com/api/status',
             });
             setCorona(res.data);
             setLoading(false);
