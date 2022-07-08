@@ -49,7 +49,7 @@ const CovidGraphSection = styled.div`
             }
 
             ${device.mobile} {
-                width: 90vw;
+                width: 95vw;
                 h1 {
                     font-size: ${fonts.size.sm};
                     margin: 0vw 25vw 4vw 25vw;

@@ -43,7 +43,7 @@ export const TitleSection = styled.div`
                 }
 
                 p {
-                    font-size: ${fonts.size.xxsm};
+                    font-size: ${fonts.size.xsm};
                 }
             }
         `;

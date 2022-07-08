@@ -75,7 +75,7 @@ const TraigeSidoSelect = styled.ul`
             }
 
             ${device.mobile} {
-                width: 70vw;
+                width: 60vw;
                 height: 10vw;
 
                 margin: 6.5vw auto 0vw auto;
@@ -84,7 +84,7 @@ const TraigeSidoSelect = styled.ul`
                     padding: 0.35vw 0.6vw;
                     margin: 0vw 0.4vw;
 
-                    font-size: ${fonts.size.sm};
+                    font-size: ${fonts.size.xsm};
                 }
             }
         `;
@@ -114,7 +114,7 @@ const TraigePageSelect = styled.div`
             }
 
             ${device.mobile} {
-                margin: 2vw auto;
+                margin: 4vw auto;
                 p {
                     margin: 2.5% 5%;
                     font-size: ${fonts.size.sm};

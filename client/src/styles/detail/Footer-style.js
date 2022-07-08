@@ -14,7 +14,7 @@ const FooterLayout = styled.div`
             color: ${colors.primary};
 
             ${device.mobile} {
-                font-size: ${fonts.size.xsm};
+                font-size: ${fonts.size.xxsm};
             }
         `;
     }}

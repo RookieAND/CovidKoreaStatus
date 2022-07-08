@@ -37,7 +37,7 @@ const GuideLine = styled.div`
             text-align: center;
 
             ${device.mobile} {
-                width: 70vw;
+                width: 80vw;
                 height: 16vw;
             }
         `;
@@ -68,13 +68,13 @@ const GuideElement = styled.div`
             }
 
             ${device.mobile} {
-                width: 18vw;
+                width: 20vw;
                 h5 {
-                    font-size: ${fonts.size.sm};
+                    font-size: ${fonts.size.xsm};
                 }
 
                 p {
-                    font-size: ${fonts.size.xsm};
+                    font-size: ${fonts.size.xxsm};
                 }
             }
         `;
