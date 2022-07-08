@@ -37,7 +37,10 @@ const CovidGraph = () => {
     const [corona, setCorona] = useState([]);
     useEffect(() => {
         const coronaStatus = async () => {
-            let res = await axios.get('http://localhost:5000/api/status');
+            let res = await axios({
+                method: 'GET',
+                url: `${process.env.baseURL || 'http://localhost:5000'}/api/status`,
+            });
             setCorona(res.data);
             setLoading(false);
         };

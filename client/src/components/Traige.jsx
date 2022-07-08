@@ -27,7 +27,7 @@ const Triage = () => {
         const traigeRoomList = async () => {
             let res = await axios({
                 method: 'POST',
-                url: 'http://localhost:5000/api/traige',
+                url: `${process.env.baseURL || 'http://localhost:5000'}/api/traige`,
                 data: {
                     sido: traigeSido,
                 },
