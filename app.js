@@ -1,5 +1,6 @@
 import express from 'express';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
@@ -10,6 +11,10 @@ dotenv.config({ encoding: 'utf8' });
 
 const app = express();
 const port = process.env.PORT || 5000;
+
+// ES Module 에는 __dirname 변수가 없기에 이를 만들어야 함.
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // 기본 port를 app Express 객체에 설정하는 과정
 app.listen(port, () => {
