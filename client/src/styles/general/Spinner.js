@@ -43,12 +43,12 @@ export const Spinner = styled.div`
                 .loader {
                     border: 8px solid #f3f3f3;
                     border-top: 8px solid #3498db;
-                    width: 60px;
-                    height: 60px;
+                    width: 30px;
+                    height: 30px;
                 }
 
                 p {
-                    font-size: ${fonts.size.sm};
+                    font-size: ${fonts.size.xsm};
                 }
             }
         `;
