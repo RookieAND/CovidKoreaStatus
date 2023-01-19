@@ -7,7 +7,7 @@
 React.js, Express 서버를 활용하여 국내 코로나 감염자 현황을 조회하고
 각 지역에 위치한 선별 진료소의 정보를 열람할 수 있는 사이트입니다.
 
-https://covidkoreastatus.herokuapp.com/ [현재 Heroku에서 서비스 중입니다.]
+~~https://covidkoreastatus.herokuapp.com/~~ [Heroku 유료 전환으로 중단]
 
 ## Dependencies
 
